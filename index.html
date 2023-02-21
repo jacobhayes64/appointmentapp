@@ -5,28 +5,71 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="index.js"></script>
   <title>Appointments</title>
+  <script src="jsquery.js"></script>
 </head>
   <body>
     
     <div id="applist"></div>
     <div id="controls">
         <h1>Appointments</h1>
+        <h2>
+          <script> document.write(new Date().toLocaleDateString()); </script>
+        </h2>
         <l1 id="create">Create</l1>
         <l1 id="delete">Delete</l1>
         <l1 id="modify">Modify</l1>
 
-        <form>
-        <label>Full Name</label>
-        <input type="text">
-        <label>Phone Number</label>
-        <input type="text">
-        <label>Email</label>
-        <input type="text">
-
-        </form>
+        <div id="dialog" title="Basic dialog">
+          <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &apos;x&apos; icon.</p>
+        </div>
+        <div id="dialog-form" title="Create new user">
+          <p class="validateTips">All form fields are required.</p>
+          <form>
+            <fieldset>
+              <label for="name">Full Name</label><br>
+                <input type="text" name="name" id="name" value="" class="text ui-widget-content ui-corner-all"><br>
+              <label for="email">Email</label><br>
+                <input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all"><br>
+              <label for="phonenumber">Phone Number</label><br>
+                <input type="phonenumber" name="phonenumber" id="phonenumber" value="" class="text ui-widget-content ui-corner-all"><br>
+                <label for="date">Date</label><br>
+                <input type="text" id="datepicker">
+         
+              <!-- Allow form submission with keyboard without duplicating the dialog button -->
+              <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+          </form>
+        </div>
+         
+         
+        <div id="users-contain" class="ui-widget">
+          <h1>Appointments</h1>
+          <table id="users" class="ui-widget ui-widget-content">
+            <thead>
+              <tr class="ui-widget-header ">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>john.doe@example.com</td>
+                <td>johndoe1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button id="create-user">Create new user</button>
+        
     </div>
     <div id="root"></div>
-    <script src="index.js"></script>
+    
   </body>
 </html>
