@@ -1,0 +1,17 @@
+h1 {
+    font-family: sans-serif;
+}
+
+l1 {
+    font-family: sans-serif;
+    border-style:ridge;
+    border-radius: 100px;
+    border-color: black;
+    padding: 0.5%;
+    cursor:grab;
+}
+
+#controls {
+    background-color: grey;
+    padding: 50px;
+}
